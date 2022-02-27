@@ -1,0 +1,13 @@
+modules:
+  http_basic_auth_2xx:
+    prober: http
+    timeout: 10s
+    http:
+      valid_status_codes:
+        - 200
+      method: HEAD
+      fail_if_ssl: false
+      fail_if_not_ssl: true
+      tls_config:
+        insecure_skip_verify: true
+      preferred_ip_protocol: 'ip4'

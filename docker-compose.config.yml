@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  gomplate:
+    image: hairyhenderson/gomplate
+    container_name: gomplate
+    command: "--input-dir /templates --output-dir /config"
+    volumes:
+      - ./templates:/templates
+      - ./config:/config
+    environment:
+      - TARGETS=${TARGETS:?err}
