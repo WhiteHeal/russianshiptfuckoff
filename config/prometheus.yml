@@ -20,10 +20,9 @@ scrape_configs:
     metrics_path: /probe
     params:
       module: [http_basic_auth_2xx]
-    static_configs:
-      - targets:
-      {{ range (split .Env.TARGETS ",") }}  - "{{ . }}"
-      {{ end }}
+    file_sd_configs:
+      - files: ['/etc/prometheus/blackbox_targets_2xx.yml']
+      
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

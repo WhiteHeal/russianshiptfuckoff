@@ -1,4 +1,2 @@
-config/alertmanager.yml
-config/prometheus.yml
 config/nginx/tls/cer.cer
 config/nginx/tls/key.key

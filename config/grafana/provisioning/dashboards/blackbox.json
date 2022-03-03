@@ -24,7 +24,7 @@
   "gnetId": 7587,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1645974710117,
+  "iteration": 1646339287526,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -36,12 +36,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "#3586ff",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -78,7 +74,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": false,
-          "expr": "count(probe_success{instance=~\"$target\"})",
+          "expr": "count(probe_success{})",
           "instant": true,
           "interval": "",
           "legendFormat": "Number of sites",
@@ -90,7 +86,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": false,
-          "expr": "sum(probe_success{instance=~\"$target\"})",
+          "expr": "sum(probe_success{})",
           "instant": true,
           "interval": "",
           "legendFormat": "Sites available",
@@ -102,7 +98,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": false,
-          "expr": "count(ALERTS{instance=~\"$target\"})",
+          "expr": "count(ALERTS{})",
           "instant": true,
           "interval": "",
           "legendFormat": "Sites unavailable",
@@ -111,6 +107,96 @@
       ],
       "title": "Generalized dashboard",
       "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "displayMode": "color-background-solid"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 532,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "% of availability "
+          }
+        ]
+      },
+      "pluginVersion": "8.4.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
+          "expr": "avg_over_time ( probe_success {instance=~\"$target\"}[7d]) * 100",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "{{ target }}",
+          "refId": "A"
+        }
+      ],
+      "title": "SLA 7 days",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "instance": true,
+              "job": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "Value": "% of availability ",
+              "target": "Site"
+            }
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "aliasColors": {},
@@ -127,7 +213,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 138,
@@ -202,7 +288,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 33
       },
       "id": 15,
       "panels": [],
@@ -267,7 +353,7 @@
         "h": 2,
         "w": 4,
         "x": 0,
-        "y": 16
+        "y": 34
       },
       "id": 2,
       "links": [],
@@ -315,7 +401,7 @@
         "h": 6,
         "w": 10,
         "x": 4,
-        "y": 16
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 25,
@@ -399,7 +485,7 @@
         "h": 6,
         "w": 10,
         "x": 14,
-        "y": 16
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 17,
@@ -526,7 +612,7 @@
         "h": 2,
         "w": 4,
         "x": 0,
-        "y": 18
+        "y": 36
       },
       "id": 20,
       "links": [],
@@ -601,7 +687,7 @@
         "h": 2,
         "w": 4,
         "x": 0,
-        "y": 20
+        "y": 38
       },
       "id": 27,
       "links": [],
@@ -689,7 +775,7 @@
         "h": 2,
         "w": 4,
         "x": 0,
-        "y": 22
+        "y": 40
       },
       "id": 18,
       "links": [],
@@ -780,7 +866,7 @@
         "h": 2,
         "w": 10,
         "x": 4,
-        "y": 22
+        "y": 40
       },
       "id": 19,
       "links": [],
@@ -855,7 +941,7 @@
         "h": 2,
         "w": 5,
         "x": 14,
-        "y": 22
+        "y": 40
       },
       "id": 23,
       "links": [],
@@ -929,7 +1015,7 @@
         "h": 2,
         "w": 5,
         "x": 19,
-        "y": 22
+        "y": 40
       },
       "id": 24,
       "links": [],
@@ -1103,12 +1189,12 @@
         "name": "status",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "up",
             "value": "1"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "down",
             "value": "0"
           }
@@ -1152,6 +1238,6 @@
   "timezone": "",
   "title": "Sites overview",
   "uid": "xtkCtBkiz",
-  "version": 13,
+  "version": 20,
   "weekStart": ""
 }

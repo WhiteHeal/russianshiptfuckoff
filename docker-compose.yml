@@ -17,6 +17,7 @@ services:
     volumes:
       - prometheus_data:/prometheus
       - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/blackbox_targets_2xx.yml:/etc/prometheus/blackbox_targets_2xx.yml
       - ./config/alertrules.yml:/etc/prometheus/alertrules.yml
     ports:
       - 9090:9090
@@ -53,10 +54,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - ./config/grafana/provisioning:/etc/grafana/provisioning
-    environment:
-      - GF_SECURITY_ADMIN_USER=russianshiptfuckoff
-      - GF_SECURITY_ADMIN_PASSWORD=russianshiptfuckoff
-      - GF_USERS_ALLOW_SIGN_UP=false
+      - ./config/grafana/grafana.ini:/etc/grafana/grafana.ini
     ports:
       - 3000:3000
 
