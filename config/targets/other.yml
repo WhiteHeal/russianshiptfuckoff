@@ -1,0 +1,34 @@
+- targets:
+    - "https://mid.ru"
+  labels:
+    priority: 1
+- targets:
+    - "https://fadn.gov.ru"
+  labels:
+    priority: 2
+- targets:
+    - "https://minjust.gov.ru"
+    - "https://rs.gov.ru"
+    - "https://mnr.gov.ru"
+    - "https://meteorf.ru"
+    - "https://rpn.gov.ru"
+    - "https://voda.gov.ru"
+    - "https://rosleshoz.gov.ru"
+    - "https://rosnedra.gov.ru"
+    - "https://www.minpromtorg.gov.ru"
+    - "https://rst.gov.ru"
+    - "https://mcx.gov.ru"
+    - "https://fsvps.gov.ru"
+    - "https://fish.gov.ru"
+    - "https://gosnadzor.ru"
+    - "https://minenergo.gov.ru"
+    - "https://fsrar.gov.ru"
+    - "https://gusp.gov.ru"
+    - "https://udprf.ru"
+    - "https://fsa.gov.ru"
+    - "https://rosreestr.gov.ru"
+    - "https://rosim.ru"
+    - "https://gfs.gov.ru"
+    - "https://archives.ru"
+  labels:
+    priority: 3

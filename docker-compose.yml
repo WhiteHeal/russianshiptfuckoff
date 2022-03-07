@@ -17,7 +17,7 @@ services:
     volumes:
       - prometheus_data:/prometheus
       - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./config/blackbox_targets_2xx.yml:/etc/prometheus/blackbox_targets_2xx.yml
+      - ./config/targets:/etc/prometheus/targets
       - ./config/alertrules.yml:/etc/prometheus/alertrules.yml
     ports:
       - 9090:9090

@@ -1,0 +1,15 @@
+- targets:
+    - "https://mintrans.gov.ru"
+  labels:
+    priority: 1
+- targets:
+    - "https://rostransnadzor.gov.ru"
+  labels:
+    priority: 2
+- targets:
+    - "https://favt.gov.ru"
+    - "https://rosavtodor.gov.ru"
+    - "https://rlw.gov.ru"
+    - "http://morflot.gov.ru"
+  labels:
+    priority: 3

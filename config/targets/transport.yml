@@ -1,0 +1,19 @@
+- targets:
+    - "https://мвд.рф"
+  labels:
+    priority: 1
+- targets:
+    - "https://mil.ru"
+  labels:
+    priority: 2
+- targets:
+    - "https://svr.gov.ru"
+    - "https://fsb.ru"
+    - "https://mchs.gov.ru"
+    - "https://fsvts.gov.ru"
+    - "https://fssp.gov.ru"
+    - "https://fsin.gov.ru"
+    - "https://fstec.ru"
+    - "https://fso.gov.ru"
+  labels:
+    priority: 3

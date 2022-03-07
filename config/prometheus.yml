@@ -16,13 +16,76 @@ scrape_configs:
     static_configs:
       - targets: ["grafana:3000"]
 
-  - job_name: 'blackbox'
+  - job_name: 'finance'
     metrics_path: /probe
     params:
       module: [http_basic_auth_2xx]
     file_sd_configs:
-      - files: ['/etc/prometheus/blackbox_targets_2xx.yml']
-      
+      - files: ['/etc/prometheus/targets/finance.yml']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - source_labels: [__param_target]
+        target_label: target
+      - target_label: __address__
+        replacement: blackbox:9115
+
+  - job_name: 'transport'
+    metrics_path: /probe
+    params:
+      module: [http_basic_auth_2xx]
+    file_sd_configs:
+      - files: ['/etc/prometheus/targets/transport.yml']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - source_labels: [__param_target]
+        target_label: target
+      - target_label: __address__
+        replacement: blackbox:9115
+
+  - job_name: 'social'
+    metrics_path: /probe
+    params:
+      module: [http_basic_auth_2xx]
+    file_sd_configs:
+      - files: ['/etc/prometheus/targets/social.yml']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - source_labels: [__param_target]
+        target_label: target
+      - target_label: __address__
+        replacement: blackbox:9115
+
+  - job_name: 'military'
+    metrics_path: /probe
+    params:
+      module: [http_basic_auth_2xx]
+    file_sd_configs:
+      - files: ['/etc/prometheus/targets/military.yml']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - source_labels: [__param_target]
+        target_label: target
+      - target_label: __address__
+        replacement: blackbox:9115
+
+  - job_name: 'sandbox'
+    metrics_path: /probe
+    params:
+      module: [http_basic_auth_2xx]
+    file_sd_configs:
+      - files: ['/etc/prometheus/targets/sandbox.yml']
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

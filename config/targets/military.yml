@@ -1,0 +1,18 @@
+- targets:
+    - "https://minfin.gov.ru"
+  labels:
+    priority: 1
+- targets:
+    - "https://nalog.ru"
+  labels:
+    priority: 2
+- targets:
+    - "https://roskazna.gov.ru"
+    - "https://economy.gov.ru"
+    - "https://fedsfm.ru"
+    - "https://rosstat.gov.ru"
+    - "https://fas.gov.ru"
+    - "https://customs.gov.ru"
+    - "https://rosreserv.gov.ru"
+  labels:
+    priority: 3

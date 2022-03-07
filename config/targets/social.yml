@@ -1,0 +1,26 @@
+- targets:
+    - "http://rkn.gov.ru"
+  labels:
+    priority: 1
+- targets:
+    - "https://digital.gov.ru"
+  labels:
+    priority: 2
+- targets:
+    - "https://minzdrav.gov.ru"
+    - "https://minobrnauki.gov.ru"
+    - "http://obrnadzor.gov.ru"
+    - "http://fadm.gov.ru"
+    - "https://roszdravnadzor.gov.ru"
+    - "https://fmba.gov.ru"
+    - "https://culture.gov.ru"
+    - "https://tourism.gov.ru"
+    - "https://minvr.gov.ru"
+    - "https://minsport.gov.ru"
+    - "https://minstroyrf.gov.ru"
+    - "https://mintrud.gov.ru"
+    - "https://rostrud.gov.ru"
+    - "https://edu.gov.ru"
+    - "https://rospotrebnadzor.ru"
+  labels:
+    priority: 3
